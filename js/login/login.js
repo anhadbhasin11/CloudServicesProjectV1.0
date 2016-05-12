@@ -19,7 +19,7 @@ var Login = React.createClass({
               <div className="login well well-small">
                 <div className="login-msg">{this.state.msg}</div>
                 <div className="center">
-                  <img src="http://placehold.it/250x100&text=Logo" alt="logo" />
+                  <img src="http://placehold.it/250x100&text=Ground to Cloud" alt=“Ground to Cloud“ />
                 </div>
                 <div className="login-form" id="UserLoginForm">
                   <div className="control-group">
