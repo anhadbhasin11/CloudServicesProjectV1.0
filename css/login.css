@@ -1,0 +1,13 @@
+#app-container #login img {
+    margin: 10px 0;
+}
+#app-container #login .center {
+    text-align: center;
+}
+#app-container #login .login {
+    max-width: 300px;
+    margin: 35px auto;
+}
+#app-container #login .login-form {
+    padding: 0px 25px;
+}

@@ -1,0 +1,40 @@
+.table    {
+    display: table;
+    border-collapse: collapse;
+    background-color: #bababa;
+    /*margin: 20px;*/
+}
+
+.row       {
+    display: table-row;
+    cursor: pointer;
+    padding: 0 20px;
+
+}
+.col { display: table-cell }
+
+.header {
+    font-weight: 600;
+    color: red;
+    background-color: #b9def0;
+}
+
+.table .row.active {
+    background-color: #d9edf7;
+
+}
+
+.table .row:not(.header) {
+    border-top: 10px solid #ddd;
+
+}
+
+.table .row:not(.header):nth-of-type(2) {
+    border-top: 10px solid #ddd;
+
+}
+
+.table-container {
+    max-height: 500px;
+    overflow: auto;
+}
