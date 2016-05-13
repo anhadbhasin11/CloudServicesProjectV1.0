@@ -1,0 +1,90 @@
+<?xml  version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+                           http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+                           http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <context:annotation-config />
+    <context:component-scan base-package="org.courseregistration" />
+
+    <mvc:annotation-driven/>
+    <security:global-method-security jsr250-annotations="enabled"/>
+
+    <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+        <property name="prefix" value="/WEB-INF/jsp/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+
+    <tx:annotation-driven />
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory" />
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+      <property name="persistenceXmlLocation" value="classpath:META-INF/persistence.xml" />
+      <property name="persistenceUnitName" value="student_registration_system" />
+      <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+      <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+      <property name="url" value="jdbc:mysql://192.168.59.103:3308/student_course_registration"/>
+      <property name="username" value="root"/>
+      <property name="password" value="root"/>
+    </bean>
+
+  <!--<security:http pattern="/students"  security="none" />
+  <security:http pattern="/professors"  security="none" />-->
+
+  <security:http create-session="stateless" entry-point-ref="digestEntryPoint" authentication-manager-ref="authenticationManager">
+    <security:custom-filter ref="digestFilter" position="DIGEST_AUTH_FILTER" />
+    <security:intercept-url pattern="/**" requires-channel="https"/>
+    <security:intercept-url pattern="/**" access="permitAll" method="GET"/>
+    <security:intercept-url pattern="/login" access="hasRole('ROLE_USER')"/>
+    <security:intercept-url pattern="/students" method="POST" access="hasRole('ROLE_ANONYMOUS')"/>
+    <security:intercept-url pattern="/professors" method="POST" access="hasRole('ROLE_ANONYMOUS')"/>
+    <security:intercept-url pattern="/**" access="hasRole('ROLE_USER')" method="POST"/>
+    <security:intercept-url pattern="/**" access="hasRole('ROLE_USER')" method="PUT"/>
+    <security:intercept-url pattern="/**" access="hasRole('ROLE_USER')" method="DELETE"/>
+    <security:csrf disabled="true"/>
+    <security:headers>
+        <security:cache-control disabled="true"/>
+    </security:headers>
+  </security:http>
+
+
+
+  <bean id="digestFilter" class=
+    "org.springframework.security.web.authentication.www.DigestAuthenticationFilter">
+    <property name="userDetailsService" ref="userService" />
+    <property name="authenticationEntryPoint" ref="digestEntryPoint" />
+  </bean>
+
+  <bean id="digestEntryPoint" class="org.springframework.security.web.authentication.www.DigestAuthenticationEntryPoint">
+    <property name="realmName" value="Resource Realm via Digest Authentication" />
+    <property name="key" value="secretKey" />
+  </bean>
+
+
+  <!--<security:authentication-manager alias="authenticationManager">
+    <security:authentication-provider ref="restAuthenticationProvider" />
+  </security:authentication-manager>-->
+
+  <bean id="userService" class="org.courseregistration.auth.CustomUserDetailsService"/>
+
+  <security:authentication-manager alias="authenticationManager">
+    <security:authentication-provider user-service-ref="userService"/>
+  </security:authentication-manager>
+
+</beans>

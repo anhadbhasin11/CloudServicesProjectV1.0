@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Move To Cloud</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="home.html">Move To Cloud</a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="usernameProfile"></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="profile.html"><i class="fa fa-fw fa-user"></i> Profile</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+           <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li class="active">
+                        <a href="student_dashboard"><i class="fa fa-fw fa-dashboard"></i>&nbsp;Dashboard</a>
+                    </li>
+                    <li class="active">
+                        <a href="list_courses"><i class="fa fa-fw fa-bars"></i>&nbsp;List Courses</a>
+                    </li>
+                    <li class="active">
+                        <a href="list_professors.html"><i class="fa fa-fw fa-users"></i>&nbsp;List Professor</a>
+                    </li>
+                    <li class="active">
+                        <a href="search.html"><i class="fa fa-fw fa-search "></i>&nbsp;Search</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Profile
+                        </h1>
+                   	</div>
+                </div>
+                <!-- /.row -->
+
+                <div class="row">
+
+                	<div class="col-lg-12">
+                    	<!-- -->
+                    <div id="successMessage"></divid>
+                    <div id="errorMessage"></div>
+                    	<div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Student Profile </h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-3 text-left"><strong>First Name</strong></div>
+                                    <div class="col-md-3 text-left" id="firstName"></div>
+                                    <div class="col-md-3"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-3 text-left"><strong>Middle Name</strong></div>
+                                    <div class="col-md-3 text-left" id="middleName">M.</div>
+                                    <div class="col-md-3"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-3 text-left"><strong>Last Name</strong></div>
+                                    <div class="col-md-3 text-left" id="lastName"></div>
+                                    <div class="col-md-3"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-3 text-left"><strong>User Name</strong></div>
+                                    <div class="col-md-3 text-left" id="username"></div>
+                                    <div class="col-md-3"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-3 text-left"><strong>Date of Birth</strong></div>
+                                    <div class="col-md-3 text-left" id="dateOfBirth">1980-04-06</div>
+                                    <div class="col-md-3"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-3 text-left"><strong>E-mail ID</strong></div>
+                                    <Input class="col-md-3 text-left" id="emailId"/>
+                                    <button type="submit" class="btn" onClick="update()">Update</button>
+                                    <div class="col-md-3"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-3 text-left"><strong>Contact Number</strong></div>
+                                    <div class="col-md-3 text-left" id="contactNumber">800-000-0000</div>
+                                    <div class="col-md-3"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-3 text-left"><strong >Address: </strong></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-3 text-left"><strong>City</strong></div>
+                                    <div class="col-md-3 text-left" id="city">Santa clara</div>
+                                    <div class="col-md-3"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-3 text-left"><strong>Street no</strong></div>
+                                    <div class="col-md-3 text-left" id="street">new street</div>
+                                    <div class="col-md-3"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-3 text-left"><strong>Apartment no</strong></div>
+                                    <div class="col-md-3 text-left" id="apartmentNumber">40</div>
+                                    <div class="col-md-3"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-3 text-left"><strong>Zip code</strong></div>
+                                    <div class="col-md-3 text-left" id="zipcode">98765</div>
+                                    <div class="col-md-3"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-3 text-left"><strong>State</strong></div>
+                                    <div class="col-md-3 text-left" id="state">California</div>
+                                    <div class="col-md-3"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-3 text-left"><strong>Previous Degree</strong></div>
+                                    <div class="col-md-3 text-left">B.E.</div>
+                                    <div class="col-md-3"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <!-- /.row -->
+
+        </div>
+            <!-- /.container-fluid -->
+
+    </div>
+        <!-- /#page-wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="js/plugins/morris/raphael.min.js"></script>
+    <script src="js/plugins/morris/morris.min.js"></script>
+    <script src="js/plugins/morris/morris-data.js"></script>
+
+    <!-- Flot Charts JavaScript -->
+    <!--[if lte IE 8]><script src="js/excanvas.min.js"></script><![endif]-->
+    <script src="js/plugins/flot/jquery.flot.js"></script>
+    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="js/plugins/flot/jquery.flot.pie.js"></script>
+    <script src="js/plugins/flot/flot-data.js"></script>
+    <script type="text/javascript" src="assets/js/digestAuthRequest.js"></script>
+
+    <script language="JavaScript">
+
+        $(window).load(function() {
+          var currentUser=JSON.parse(window.sessionStorage.getItem('currentUser'))
+
+          var getReq = new digestAuthRequest('GET', "/api.courseregistration/students/"+currentUser.userId,currentUser.username, currentUser.password);
+          getReq.request(function(data) {
+            var studentResponse = data
+            window.sessionStorage.setItem('student',JSON.stringify(data));
+
+            document.getElementById("firstName").innerHTML=studentResponse.student.firstName
+            document.getElementById("lastName").innerHTML=studentResponse.student.lastName
+            document.getElementById("username").innerHTML=studentResponse.student.username
+            document.getElementById("usernameProfile").innerHTML=studentResponse.student.username
+            document.getElementById("emailId").innerHTML=studentResponse.student.emailId
+
+          },function(errorCode) {
+            if(304==errorCode){
+              var studentResponse=JSON.parse(window.sessionStorage.getItem('student'));
+              document.getElementById("firstName").innerHTML=studentResponse.student.firstName
+              document.getElementById("lastName").innerHTML=studentResponse.student.lastName
+              document.getElementById("username").innerHTML=studentResponse.student.username
+              document.getElementById("usernameProfile").innerHTML=studentResponse.student.username
+              document.getElementById("emailId").value=studentResponse.student.emailId
+            }else{
+              //document.getElementById('errorDiv').innerHTML='<div class=\"alert alert-danger\"><strong>Oh snap!</strong> Change a few things up and try submitting again.</div>'
+              console.log(JSON.stringify(errorCode))
+            }
+          })
+        });
+
+      update=function(){
+        var currentUser=JSON.parse(window.sessionStorage.getItem('currentUser'))
+        var email=document.getElementById('emailId').value
+        var storedStudent=JSON.parse(window.sessionStorage.getItem('student'));
+
+        storedStudent.student['emailId'] = email;
+        var studentPutData={
+          id:storedStudent.student.id,
+          firstName:storedStudent.student.firstName,
+          middleName:storedStudent.student.middleName,
+          lastName:storedStudent.student.lastName,
+          emailId:storedStudent.student.emailId,
+          phoneNumber:storedStudent.student.phoneNumber,
+        }
+
+        var putReq = new digestAuthRequest('PUT', "/api.courseregistration/students/"+currentUser.userId,currentUser.username, currentUser.password);
+
+        putReq.request(function(data) {
+
+          document.getElementById("successMessage").innerHTML='<div class=\"alert alert-success\">'+
+            '<strong>Well done!</strong> Email Successfully updated'+'</div>'
+
+
+        },function(errorCode) {
+          if(errorCode == 412){
+            document.getElementById('errorMessage').innerHTML='<div class=\"alert alert-danger\"><strong>Oh snap!</strong> Something concurrently changed.Please try again!</div>'
+          }else{
+            document.getElementById('errorMessage').innerHTML='<div class=\"alert alert-danger\"><strong>Oh snap!</strong> Error occured.Please try again!</div>'
+          }
+          console.log(JSON.stringify(errorCode))
+        }, studentPutData)
+      }
+    </script>
+</body>
+
+</html>

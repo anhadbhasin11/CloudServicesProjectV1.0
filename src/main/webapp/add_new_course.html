@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>New Course</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/form-elements.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+
+    </head>
+
+    <body>
+
+            <div class="inner-bg top-content">
+                <div class="container-">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1><strong>Add new Course</strong></h1>
+                            <div class="description">
+                                <p>
+                                    Create a new course in the system.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-10 col-sm-offset-1 form-box">
+                            <div class="form-top">
+                                <div class="form-top-left">
+                                    <p><strong>Please enter course details</strong></p>
+                                </div>
+                                <div class="form-top-right">
+                                    <i class="fa fa-file-text-o"></i>
+                                </div>
+                            </div>
+                            <div class="form-bottom">
+                                <form role="form" action="" method="post" class="login-form">
+                                    <div class="row">
+                                        <div class="col-xs-3 col-xs-offset-1 form-group">
+                                            <h4 class="pull-right"><strong>Course Details</strong></h4>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-xs-3 col-xs-offset-1 form-group">
+                                                <p class="pull-right">Course Code</p>
+                                            </div>
+                                            <div class="col-xs-6 form-group">
+                                                <label class="sr-only" for="form-coursecode">Course Code</label>
+                                                <input type="text" name="form-coursecode" placeholder="Course code..." class="form-username form-control" id="form-coursecode">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-xs-3 col-xs-offset-1 form-group">
+                                                <p class="pull-right">Course Name</p>
+                                            </div>
+                                            <div class="col-xs-6 form-group">
+                                                <label class="sr-only" for="form-coursename">Course Name</label>
+                                                <input type="text" name="form-coursename" placeholder="Course Name..." class="form-username form-control" id="form-coursename">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-xs-3 col-xs-offset-1 form-group">
+                                                <p class="pull-right">Description</p>
+                                            </div>
+                                            <div class="col-xs-6 form-group">
+                                                <label class="sr-only" for="form-coursedescription">Description</label>
+                                                <input type="text" name="form-coursedescription" placeholder="Description..." class="form-username form-control" id="form-coursedescription">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-xs-3 col-xs-offset-1 form-group">
+                                                <p class="pull-right">Number of Credits</p>
+                                            </div>
+                                            <div class="col-xs-6 form-group">
+                                                <select id="form_numOfCredits" class="selectpicker">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-xs-3 col-xs-offset-1 form-group">
+                                                <p class="pull-right">Prerequisite Course</p>
+                                            </div>
+                                            <div class="col-xs-6 form-group">
+                                                <label class="sr-only" for="form-prerequisiteCourse">Prerequisite Course</label>
+                                                <input type="text" name="form-prerequisiteCourse" placeholder="Prerequisite Course.." class="form-username form-control" id="form-prerequisiteCourse">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-xs-3 col-xs-offset-1 form-group">
+                                                <p class="pull-right">Department</p>
+                                            </div>
+                                            <div class="col-xs-6 form-group">
+                                                <label class="sr-only" for="form-department">Department</label>
+                                                <input type="text" name="form-department" placeholder="Department..." class="form-username form-control" id="form-department">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-xs-3 col-xs-offset-1 form-group">
+                                                <p class="pull-right">Semester</p>
+                                            </div>
+                                            <div class="col-xs-6 form-group">
+                                                <label class="sr-only" for="form-semester">Semester</label>
+                                                <input type="text" name="form-semester" placeholder="Semester..." class="form-username form-control" id="form-semester">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-xs-3 col-xs-offset-1 form-group">
+                                                <p class="pull-right">Dat of week</p>
+                                            </div>
+                                            <div class="col-xs-6 form-group">
+                                                <select id="form_dayOfWeek" class="selectpicker">
+                                                    <option>Monday</option>
+                                                    <option>Tuesday</option>
+                                                    <option>Wednesday</option>
+                                                    <option>Thursday</option>
+                                                    <option>Friday</option>
+                                                    <option>Saturday</option>
+                                                    <option>Sunday</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-xs-3 col-xs-offset-1 form-group">
+                                                <p class="pull-right">Room Number</p>
+                                            </div>
+                                            <div class="col-xs-6 form-group">
+                                                <label class="sr-only" for="form-roomNumber">Room Number</label>
+                                                <input type="text" name="form-roomNumber" placeholder="Room Number..." class="form-username form-control" id="form-roomNumber">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-xs-3 col-xs-offset-1 form-group">
+                                                <p class="pull-right">Total Capacity</p>
+                                            </div>
+                                            <div class="col-xs-6 form-group">
+                                                <label class="sr-only" for="form-totalCapacity">Total Capacity</label>
+                                                <input type="text" name="form-totalCapacity" placeholder="Total Capacity..." class="form-username form-control" id="form-totalCapacity">
+                                            </div>
+                                            <div class="col-xs-3 col-xs-offset-1 form-group">
+                                                <p class="pull-right">WaitList Capacity</p>
+                                            </div>
+                                            <div class="col-xs-6 form-group">
+                                                <label class="sr-only" for="form-waitListCapacity">Wait List Capacity</label>
+                                                <input type="text" name="form-waitListCapacity" placeholder="Wait List Capacity..." class="form-username form-control" id="form-waitListCapacity">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-xs-3 col-xs-offset-1 form-group">
+                                                <p class="pull-right">Mode Of Instruction</p>
+                                            </div>
+                                            <div class="col-xs-6 form-group">
+                                                <label class="sr-only" for="form-Mode Of Instruction">Mode Of Instruction</label>
+                                                <input type="text" name="form-modeOfInstruction" placeholder="Mode Of Instruction..." class="form-username form-control" id="form-modeOfInstruction">
+                                            </div>
+                                            <div class="col-xs-3 col-xs-offset-1 form-group">
+                                                <p class="pull-right">Price</p>
+                                            </div>
+                                            <div class="col-xs-6 form-group">
+                                                <label class="sr-only" for="form-price">Price</label>
+                                                <input type="text" name="form-price" placeholder="Price in $..." class="form-username form-control" id="form-price">
+                                            </div>
+                                        </div>
+                                    </div>
+<!-- private Course course;
+
+	private String classStartTime;
+	private String classEndTime;
+	private Date startDate;
+	private Date endDate;
+-->
+                                    <div class="row">
+                                        <div class="col-xs-3 col-xs-offset-1 form-group">
+                                            <h4 class="pull-right"><strong>Specify Schedule</strong></h4>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-xs-3 col-xs-offset-1 form-group">
+                                                <p class="pull-right">Class Start Time</p>
+                                            </div>
+                                            <div class="col-xs-6 form-group">
+                                                <label class="sr-only" for="form-classStartTime">Class Start Time</label>
+                                                <input type="text" name="form-classStartTime" placeholder="Class Start Time..." class="form-username form-control" id="form-classStartTime">
+                                            </div>
+                                            <div class="col-xs-3 col-xs-offset-1 form-group">
+                                                <p class="pull-right">Class End Time</p>
+                                            </div>
+                                            <div class="col-xs-6 form-group">
+                                                <label class="sr-only" for="form-classEndTime">Class End Time</label>
+                                                <input type="text" name="form-classEndTime" placeholder="Class End Time..." class="form-username form-control" id="form-classEndTime">
+                                            </div>
+                                            <div class="col-xs-3 col-xs-offset-1 form-group">
+                                                <p class="pull-right">Start Date</p>
+                                            </div>
+                                            <div class="col-xs-6 form-group">
+                                                <label class="sr-only" for="form-startDate">Class Start Date</label>
+                                                <input type="text" name="form-startDate" placeholder="Class Start Date..." class="form-username form-control" id="form-startDate">
+                                            </div>
+                                            <div class="col-xs-3 col-xs-offset-1 form-group">
+                                                <p class="pull-right">End Date</p>
+                                            </div>
+                                            <div class="col-xs-6 form-group">
+                                                <label class="sr-only" for="form-endDate">Class End Time</label>
+                                                <input type="text" name="form-endDate" placeholder="Class End Date..." class="form-username form-control" id="form-endDate">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6 col-xs-offset-4 text">
+                                            <div class="description">
+                                                 <button type="button" class="btn btn-default">Register</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+        <!-- Javascript -->
+        <script src="assets/js/jquery-1.11.1.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/jquery.backstretch.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
+
+        <!--[if lt IE 10]>
+        <script src="../assets/js/placeholder.js"></script>
+        <![endif]-->
+
+    </body>
+
+</html>
